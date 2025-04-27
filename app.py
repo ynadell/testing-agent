@@ -13,7 +13,7 @@ DELAY_MS = 2000  # Delay between retries in milliseconds
 # Utility function to call the Gemini API
 def call_gemini_api(model: str, prompt: str) -> str:
     try:
-        gemini_api_key = "AIzaSyB9G6eE9fESU2RHTfI8leiNxQF-Kpa9juE"
+        gemini_api_key = os.getenv('API_KEY')
         response = requests.post(
             f"{API_URL}?key={gemini_api_key}",
             json={
